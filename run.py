@@ -172,13 +172,11 @@ print(f"\nWelcome to Love Sandwiches data automation!\n\n")
 stock_data = main()
 
 def get_stock_values(data):
+    """
+    Return the list of stock to be made for next market
+    """
     headings = SHEET.worksheet('stock').row_values(1)
     make_stock = data
-    # heading_values = []
-    # for inf in range(1,7):
-    #     head = dict_head.col_values(inf)
-    #     headings.append(head[0])
-    #     heading_values.append(head[-1])
     make_stock_list = dict(zip(headings,make_stock))
     print(f"Make the following numbers of sandwiches for the next market:\n")
     return make_stock_list
@@ -186,7 +184,3 @@ def get_stock_values(data):
 
 stock_values = get_stock_values(stock_data)
 print(stock_values)
-
-
-
-
