@@ -176,8 +176,7 @@ def get_stock_values(data):
     Return the list of stock to be made for next market
     """
     headings = SHEET.worksheet('stock').row_values(1)
-    make_stock = data
-    make_stock_list = dict(zip(headings,make_stock))
+    make_stock_list = dict(zip(headings,data))
     print(f"Make the following numbers of sandwiches for the next market:\n")
     return make_stock_list
 
